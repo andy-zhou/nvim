@@ -27,15 +27,29 @@ let g:at_google = filereadable( google_vimrc )
 " Vim Plug
 source ~/.config/nvim/vim-plug.vim
 
-" Colors
-let g:solarized_termcolors=256   " Downgrade solarized colors to terminal colors
-set background=dark   " Sets dark backgroun
+" Set Solarized Colors
+" let g:solarized_termcolors=256   " Downgrade solarized colors
+" let g:solarized_contrast = "high"   " Makes solarized more visable
+set background=dark   " Sets dark background
 colorscheme solarized   " Sets colorscheme to solarized
 
 " Source Control Configuration
 let g:signify_vcs_list = [ 'git' ]
 
-" Do things splifically for google
+" Key Mappings
+source ~/.config/nvim/key-maps.vim
+
+" NERDTree Stuff
+augroup NERDTree
+  autocmd!
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * wincmd p
+  autocmd BufEnter *
+    \ if (winnr("$") == 1 && exists("b:NERDTree") && 
+    \ b:NERDTree.isTabTree()) | q | endif
+augroup END
+
+" Do things specifically for google, including overriding defaults
 if g:at_google
   exec 'source ' . google_vimrc
 endif
