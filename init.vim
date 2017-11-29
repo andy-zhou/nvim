@@ -1,3 +1,10 @@
+" Check if at Google
+let google_vimrc = '~/.config/nvim/google/init.vim'
+let g:at_google = filereadable( google_vimrc )
+
+" Vim Plug
+source ~/.config/nvim/vim-plug.vim
+
 " Configuration
 set number   " Show line numbers
 set showmatch   " Show matching brackets
@@ -19,13 +26,6 @@ endif
 " Opening files
 set splitbelow   " Horizontal split below current
 set splitright   " Vertical split to right of current
-
-" Check if at Google
-let google_vimrc = '~/.config/nvim/google/init.vim'
-let g:at_google = filereadable( google_vimrc )
-
-" Vim Plug
-source ~/.config/nvim/vim-plug.vim
 
 " Set Solarized Colors
 " let g:solarized_termcolors=256   " Downgrade solarized colors
