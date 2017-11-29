@@ -32,7 +32,7 @@ Plug 'pangloss/vim-javascript'   " Vim for javascript
 
 " Specific things for Non-Google use
 if !g:at_google
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 endif
 
 call plug#end()
