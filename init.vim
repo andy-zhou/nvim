@@ -42,11 +42,17 @@ source ~/.config/nvim/key-maps.vim
 " NERDTree Stuff
 augroup NERDTree
   autocmd!
-  autocmd VimEnter * NERDTree
-  autocmd VimEnter * wincmd p
+  autocmd VimEnter * NERDTree   " Automatically Open NERDTree
+  autocmd VimEnter * wincmd p   " Move windows on opening NERDTree on open
   autocmd BufEnter *
     \ if (winnr("$") == 1 && exists("b:NERDTree") && 
-    \ b:NERDTree.isTabTree()) | q | endif
+    \ b:NERDTree.isTabTree()) | q | endif   " Close when NERDTree is only pane
+augroup END
+
+" Tagbar Stuff
+augroup Tagbar
+  autocmd!
+  autocmd VimEnter * Tagbar   " Automatically Open Tagbar
 augroup END
 
 " Do things specifically for google, including overriding defaults
