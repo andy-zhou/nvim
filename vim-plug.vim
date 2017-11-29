@@ -12,7 +12,13 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'   " File system sidebar navigation
 Plug 'bling/vim-airline'   " Vim status
 Plug 'mhinz/vim-signify'   " Display version control mondifications
+
+" Code Outline
 Plug 'majutsushi/tagbar'   " Class outline viewer, uses CTags
+  " Utility to generate javascript CTags - Then
+  " npm install -g git+https://github.com/ramitos/jsctags.git
+  " make sure jsctags is in the path
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'   " Solarized colorscheme
@@ -22,6 +28,7 @@ Plug 'kien/ctrlp.vim'   " Fuzzy matching
 
 " Languages
 Plug 'scrooloose/syntastic'   " General Syntax Checking
+Plug 'pangloss/vim-javascript'   " Vim for javascript
 
 " Specific things for Non-Google use
 if !g:at_google
